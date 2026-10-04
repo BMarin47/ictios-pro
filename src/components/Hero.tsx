@@ -19,30 +19,26 @@ export function Hero() {
   const currentSlogan = HERO_SLOGANS[sloganIndex];
 
   const HERO_BACKGROUNDS = [
-    "/images/motorhome-bote.png",
-    "/images/equipo-expertos.png",
+    "/images/motorhome-bote.jpg",
+    "/images/equipo-expertos.jpg",
     "/images/profesionalismo-batimetria.png",
-    "/images/honda-ictios-atardecer.png",
+    "/images/honda-ictios-atardecer.jpg",
   ];
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black text-white"
+      className="relative h-screen w-full overflow-hidden bg-black text-white flex items-center justify-center"
     >
-      {/* Background Image with CSS Cropping / Zoom & origin-bottom to hide baked-in text */}
+      {/* Background Image with natural scale and crop via center 80% */}
       <AnimatePresence mode="wait">
         <motion.div
           key={sloganIndex}
-          className="absolute inset-0 z-0 origin-bottom"
-          initial={{ opacity: 0, scale: 1.35 }}
-          animate={{ opacity: 1, scale: 1.42 }}
+          className="absolute inset-0 z-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{
-            opacity: { duration: 1.2 },
-            scale: { duration: 15, ease: "easeInOut" },
-          }}
-          style={{ transformOrigin: "bottom center" }}
+          transition={{ duration: 1 }}
         >
           <Image
             src={HERO_BACKGROUNDS[sloganIndex]}
@@ -50,19 +46,19 @@ export function Hero() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-bottom origin-bottom scale-[1.38] filter brightness-[0.92] contrast-[1.05]"
+            className="scale-105 transition-transform duration-1000 ease-out"
+            style={{ objectFit: "cover", objectPosition: "center 80%" }}
           />
         </motion.div>
       </AnimatePresence>
 
-      {/* Lighter Gradient Overlays - Transparent center to let photos pop, subtle edges for navbar and footer contrast */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/45 via-black/10 to-zinc-950 pointer-events-none" />
-      <div className="absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_center,_transparent_45%,_rgba(0,0,0,0.65)_100%)] pointer-events-none" />
+      {/* Camuflaje con Degradado Estratégico (Overlay) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/40 to-black/80 z-10 pointer-events-none" />
 
-      {/* Hero Content with Glassmorphic Container for high contrast */}
-      <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-16 flex flex-col items-center">
+      {/* Hero Content with Glassmorphic Container (z-20 por encima del overlay oscuro) */}
+      <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 pb-12 flex flex-col items-center">
         {/* Glassmorphism Wrapper for main titles and rotating slogans */}
-        <div className="w-full max-w-4xl p-6 sm:p-10 rounded-3xl bg-black/25 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] flex flex-col items-center">
+        <div className="w-full max-w-4xl p-6 sm:p-10 rounded-3xl bg-black/30 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.6)] flex flex-col items-center">
           {/* Subtle pill tag */}
           <motion.div
             initial={{ opacity: 0, y: -15 }}
@@ -90,7 +86,7 @@ export function Hero() {
           </motion.h1>
 
           {/* Dynamic Rotating Slogans */}
-          <div className="min-h-[110px] sm:min-h-[90px] mt-6 max-w-2xl flex items-center justify-center">
+          <div className="min-h-[100px] sm:min-h-[85px] mt-6 max-w-2xl flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlogan.title}
@@ -143,23 +139,23 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.7 }}
-          className="mt-12 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10 text-left w-full max-w-4xl"
+          className="mt-8 pt-6 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 text-left w-full max-w-4xl"
         >
-          <div className="bg-black/20 backdrop-blur-sm p-3 rounded-2xl border border-white/5">
-            <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight drop-shadow-md">25+</div>
-            <div className="text-[11px] uppercase tracking-wider text-zinc-300 font-mono mt-0.5">Años de Trayectoria</div>
+          <div className="bg-black/30 backdrop-blur-sm p-3 rounded-2xl border border-white/5">
+            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight drop-shadow-md">25+</div>
+            <div className="text-[10px] uppercase tracking-wider text-zinc-300 font-mono mt-0.5">Años de Trayectoria</div>
           </div>
-          <div className="bg-black/20 backdrop-blur-sm p-3 rounded-2xl border border-white/5">
-            <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight drop-shadow-md">50+</div>
-            <div className="text-[11px] uppercase tracking-wider text-zinc-300 font-mono mt-0.5">Equipos Especializados</div>
+          <div className="bg-black/30 backdrop-blur-sm p-3 rounded-2xl border border-white/5">
+            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight drop-shadow-md">50+</div>
+            <div className="text-[10px] uppercase tracking-wider text-zinc-300 font-mono mt-0.5">Equipos Especializados</div>
           </div>
-          <div className="bg-black/20 backdrop-blur-sm p-3 rounded-2xl border border-white/5">
-            <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight drop-shadow-md">100%</div>
-            <div className="text-[11px] uppercase tracking-wider text-zinc-300 font-mono mt-0.5">Operatividad en Campo</div>
+          <div className="bg-black/30 backdrop-blur-sm p-3 rounded-2xl border border-white/5">
+            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight drop-shadow-md">100%</div>
+            <div className="text-[10px] uppercase tracking-wider text-zinc-300 font-mono mt-0.5">Operatividad en Campo</div>
           </div>
-          <div className="bg-black/20 backdrop-blur-sm p-3 rounded-2xl border border-white/5">
-            <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight drop-shadow-md">15+</div>
-            <div className="text-[11px] uppercase tracking-wider text-zinc-300 font-mono mt-0.5">Avales Oficiales</div>
+          <div className="bg-black/30 backdrop-blur-sm p-3 rounded-2xl border border-white/5">
+            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight drop-shadow-md">15+</div>
+            <div className="text-[10px] uppercase tracking-wider text-zinc-300 font-mono mt-0.5">Avales Oficiales</div>
           </div>
         </motion.div>
       </div>
@@ -171,13 +167,13 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.8 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 text-zinc-300 hover:text-white transition-colors cursor-pointer group"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 text-zinc-300 hover:text-white transition-colors cursor-pointer group"
       >
         <span className="text-[9px] uppercase tracking-[0.25em] font-mono text-zinc-300 group-hover:text-zinc-100 drop-shadow">
           Deslizar
         </span>
         <motion.div
-          animate={{ y: [0, 6, 0] }}
+          animate={{ y: [0, 5, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
         >
           <ChevronDown className="w-4 h-4 text-zinc-300 group-hover:text-white" />
