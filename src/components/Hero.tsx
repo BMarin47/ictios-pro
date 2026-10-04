@@ -130,11 +130,10 @@ export function Hero() {
             </a>
 
             <a
-              href="#equipamiento"
+              href="#equipo"
               className="w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-semibold tracking-widest uppercase text-white bg-zinc-950/70 hover:bg-zinc-900 border border-white/20 hover:border-white/50 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] flex items-center justify-center gap-2"
             >
-              <Compass className="w-4 h-4 text-zinc-300" />
-              <span>Ver Flota & Equipamiento</span>
+              <span>Ver Equipo de Trabajo</span>
             </a>
           </motion.div>
         </div>

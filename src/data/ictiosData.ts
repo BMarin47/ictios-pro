@@ -479,44 +479,44 @@ export const EQUIPMENT_CATEGORIES: EquipmentCategory[] = [
   },
 ];
 
-export const TEAM_MEMBERS: TeamMember[] = [
+export interface TeamMemberData {
+  name: string;
+  role: string;
+  description: string;
+}
+
+export const TEAM_MEMBERS_EXACT: TeamMemberData[] = [
   {
-    name: "Bruno Alejandro Marín",
-    role: "Dirección Operativa & Acuicultura",
-    specialty: "Técnico Universitario en Acuicultura",
-    bio: "Especialista en monitoreo de ictiofauna, batimetrías, manejo intensivo de salmónidos en jaulas flotantes, reproducción de pejerrey silvestre y logística integral de campañas hidroeléctricas en todo el territorio nacional.",
-    imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+    name: "BRUNO ALEJANDRO MARÍN",
+    role: "DIRECCIÓN GENERAL, EJECUTIVA Y COMERCIAL",
+    description: "Técnico Universitario en Acuicultura.",
   },
   {
-    name: "Lic. Lilen Marín",
-    role: "Gestión & Auditoría Ambiental",
-    specialty: "Licenciada en Gestión Ambiental",
-    bio: "Experta en evaluaciones de impacto ambiental (EIA), auditorías técnicas, sistemas de gestión bajo normas ISO 14001, ordenamiento de recursos naturales y coordinación de normativas para grandes obras hídricas.",
-    imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+    name: "LILEN MARÍN",
+    role: "DIRECCIÓN GENERAL, EJECUTIVA Y COMERCIAL",
+    description: "Licenciada en Gestión Ambiental .",
   },
   {
-    name: "Claudia Patricia González",
-    role: "Apoderada & Marco Regulatorio",
-    specialty: "Normativa Legal, Industrial y Ambiental",
-    bio: "A cargo de la base de datos de normas legales, resoluciones industriales y ambientales, inscripciones ante registros ministeriales provinciales y cumplimiento de regulaciones ante ENRE, ORSEP y Prefectura Naval.",
-    imageUrl: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=800&q=80",
+    name: "CLAUDIA PATRICIA GONZÁLEZ",
+    role: "COORDINADORA ASUNTOS LEGALES Y HABILITACIONES",
+    description: "Apoderada. A cargo de la base de datos de normas legales industriales y ambientales.",
   },
 ];
 
 export const INTERDISCIPLINARY_ROLES = [
-  "Especialistas en Medio Ambiente",
-  "Licenciados en Gestión Ambiental",
-  "Licenciados en Biodiversidad",
-  "Licenciados en Biología",
-  "Doctores en Química",
-  "Licenciados en Química y Bioquímica",
-  "Arquitectos",
-  "Profesionales en Acuicultura",
-  "Antropólogos",
-  "Geólogos",
-  "Agrimensores",
-  "Topógrafos",
-  "Ingenieros en Varias Especialidades",
+  "Especialistas en Medio Ambiente.",
+  "Licenciados en gestión ambiental.",
+  "Licenciados en Biodiversidad.",
+  "Licenciados en Biología.",
+  "Doctores en Química.",
+  "Licenciados en Química y Bioquímica.",
+  "Arquitectos.",
+  "Profesionales en Acuicultura.",
+  "Antropólogos.",
+  "Geólogos.",
+  "Agrimensores.",
+  "Topógrafos.",
+  "Ingenieros en varias especialidades.",
 ];
 
 export const ANTECEDENTS_LIST = [

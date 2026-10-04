@@ -2,9 +2,8 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { BentoGrid } from "@/components/BentoGrid";
 import { MainServices } from "@/components/MainServices";
-import { DetailedEquipment } from "@/components/DetailedEquipment";
-import { Antecedents } from "@/components/Antecedents";
 import { Team } from "@/components/Team";
+import { Antecedents } from "@/components/Antecedents";
 import { ClientsSection } from "@/components/ClientsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
@@ -17,9 +16,8 @@ export default function Home() {
         <Hero />
         <BentoGrid />
         <MainServices />
-        <DetailedEquipment />
-        <Antecedents />
         <Team />
+        <Antecedents />
         <ClientsSection />
         <ContactSection />
       </main>

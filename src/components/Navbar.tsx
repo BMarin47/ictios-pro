@@ -10,9 +10,8 @@ const NAV_ITEMS = [
   { name: "Inicio", href: "/#hero" },
   { name: "Por Qué Elegirnos", href: "/#porque-elegirnos" },
   { name: "Servicios", href: "/#servicios" },
-  { name: "Equipamiento", href: "/#equipamiento" },
-  { name: "Antecedentes", href: "/#antecedentes" },
   { name: "Equipo", href: "/#equipo" },
+  { name: "Antecedentes", href: "/#antecedentes" },
   { name: "Clientes", href: "/clientes" },
 ];
 
