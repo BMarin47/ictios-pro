@@ -18,32 +18,41 @@ export function Hero() {
 
   const currentSlogan = HERO_SLOGANS[sloganIndex];
 
+  const HERO_BACKGROUNDS = [
+    "/images/motorhome-bote.png",
+    "/images/equipo-expertos.png",
+    "/images/profesionalismo-batimetria.png",
+    "/images/honda-ictios-atardecer.png",
+  ];
+
   return (
     <section
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black text-white"
     >
       {/* Background Image with Starlink Slow Ken-Burns Zoom Animation */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        initial={{ scale: 1 }}
-        animate={{ scale: 1.08 }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "easeInOut",
-        }}
-      >
-        <Image
-          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2400&q=85"
-          alt="Ictios Consultora Ambiental - Cuenca y Embalse"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-      </motion.div>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={sloganIndex}
+          className="absolute inset-0 z-0"
+          initial={{ opacity: 0, scale: 1.02 }}
+          animate={{ opacity: 1, scale: 1.08 }}
+          exit={{ opacity: 0 }}
+          transition={{
+            opacity: { duration: 1.2 },
+            scale: { duration: 15, ease: "easeInOut" },
+          }}
+        >
+          <Image
+            src={HERO_BACKGROUNDS[sloganIndex]}
+            alt={currentSlogan.title}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center filter brightness-[0.75] contrast-[1.05]"
+          />
+        </motion.div>
+      </AnimatePresence>
 
       {/* Dark Multi-layer Gradient Overlays for Starlink High-Contrast Readability */}
       <div className="absolute inset-0 z-10 bg-black/60 backdrop-blur-[1px]" />

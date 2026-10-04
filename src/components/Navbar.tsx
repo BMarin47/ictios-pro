@@ -7,13 +7,13 @@ import { Waves, Menu, X, ArrowUpRight, Phone, Mail } from "lucide-react";
 import { CONTACT_INFO } from "@/data/ictiosData";
 
 const NAV_ITEMS = [
-  { name: "Inicio", href: "#hero" },
-  { name: "Por Qué Elegirnos", href: "#porque-elegirnos" },
-  { name: "Servicios", href: "#servicios" },
-  { name: "Equipamiento", href: "#equipamiento" },
-  { name: "Antecedentes", href: "#antecedentes" },
-  { name: "Equipo", href: "#equipo" },
-  { name: "Clientes", href: "#clientes" },
+  { name: "Inicio", href: "/#hero" },
+  { name: "Por Qué Elegirnos", href: "/#porque-elegirnos" },
+  { name: "Servicios", href: "/#servicios" },
+  { name: "Equipamiento", href: "/#equipamiento" },
+  { name: "Antecedentes", href: "/#antecedentes" },
+  { name: "Equipo", href: "/#equipo" },
+  { name: "Clientes", href: "/clientes" },
 ];
 
 export function Navbar() {

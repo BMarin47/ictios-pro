@@ -582,6 +582,51 @@ export const ANTECEDENTS_LIST = [
   },
 ];
 
+export interface ClientLogo {
+  name: string;
+  logo: string;
+}
+
+export const FEATURED_CLIENT_LOGOS: ClientLogo[] = [
+  { name: "Pampa Energía", logo: "/images/clients/logoClientePampa.png" },
+  { name: "AES Argentina Generación", logo: "/images/clients/logoClienteAes.png" },
+  { name: "Municipalidad de San Rafael", logo: "/images/clients/logoClienteMuni.png" },
+  { name: "Barrick (Minería Responsable)", logo: "/images/clients/logoClienteBarrick.png" },
+  { name: "Aeropuertos Argentina 2000", logo: "/images/clients/logoAeropuerto.png" },
+  { name: "Arcor", logo: "/images/clients/logoArcor.jpeg" },
+  { name: "Club de Pescadores San Rafael", logo: "/images/clients/logoClubPescadores.png" },
+  { name: "EDERSA", logo: "/images/clients/logoEdersa.png" },
+  { name: "Hidroeléctrica Ameghino S.A.", logo: "/images/clients/logoHidroelectricaAmeghino.jpg" },
+  { name: "Irrigación", logo: "/images/clients/logoIrrigacion.jpg" },
+  { name: "Minera Santa Cruz", logo: "/images/clients/logoMineraSantaCruz.jpg" },
+  { name: "UNCUYO", logo: "/images/clients/logoUNC.jpg" },
+];
+
+export const EXACT_CLIENTS_LIST: string[] = [
+  "Pampa Energía S.A. (Hidroeléctrica Diamante).",
+  "AES Argentina Generación S.A. (Neuquén y R. Negro).",
+  "AES Argentina Generación S.A. (San Juan).",
+  "AES Argentina Generación S.A. (Salta).",
+  "Ente Ejecutivo Embalse Casa de Piedra S.A.",
+  "Central Puerto S.A. (Hidroeléctrica Piedra del Águila).",
+  "Hidrocuyo S.A. (Embalse Potrerillos).",
+  "CEMPPSA (Hidroeléctrica Potrerillos).",
+  "Hidroeléctrica Ameghino S.A.",
+  "COOPERATIVAS Varias de Provisión de Agua Potable.",
+  "Knight Piesold (Consultora Internacional).",
+  "Club de Náutica y Pesca Los Reyunos.",
+  "Asociación Turística Cañón del Atuel.",
+  "Inspección de Cauce con fines turísticos del Río Atuel (Departamento General de Irrigación de la Provincia de Mendoza).",
+  "Establecimiento Agropecuario Modelo \"RENACER\".",
+  "R.P.B. S.A.",
+  "E.P.A.S. (Ente Provincial del Agua y Saneamiento).",
+  "Asociación de Pesca con Mosca de San Rafael.",
+  "DULCOR S.A.",
+  "Coto de Pesca con Mosca \"El Tigre\".",
+  "VECTOR S.A.",
+  "Hidroeléctrica Pichi Picún Leufú.",
+];
+
 export const CLIENTS_LIST = [
   { name: "Pampa Energía S.A.", note: "Hidroeléctrica Diamante" },
   { name: "AES Argentina Generación S.A.", note: "Neuquén, Río Negro, San Juan y Salta" },

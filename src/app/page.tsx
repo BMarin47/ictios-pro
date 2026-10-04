@@ -5,7 +5,7 @@ import { MainServices } from "@/components/MainServices";
 import { DetailedEquipment } from "@/components/DetailedEquipment";
 import { Antecedents } from "@/components/Antecedents";
 import { Team } from "@/components/Team";
-import { ClientsMarquee } from "@/components/ClientsMarquee";
+import { ClientsSection } from "@/components/ClientsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 
@@ -20,7 +20,7 @@ export default function Home() {
         <DetailedEquipment />
         <Antecedents />
         <Team />
-        <ClientsMarquee />
+        <ClientsSection />
         <ContactSection />
       </main>
       <Footer />
