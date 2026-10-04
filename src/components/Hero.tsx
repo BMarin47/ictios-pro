@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ArrowRight, Compass, Sparkles } from "lucide-react";
+import { ChevronDown, ArrowRight, Sparkles } from "lucide-react";
 import { HERO_SLOGANS } from "@/data/ictiosData";
 
 export function Hero() {
@@ -33,7 +33,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-screen w-full overflow-hidden bg-black text-white flex items-center justify-center"
+      className="relative min-h-[70vh] md:min-h-screen w-full overflow-hidden bg-black text-white flex items-center justify-center py-20 md:py-0"
     >
       {/* Background Image - strictly natural proportions: object-cover object-center, ZERO zoom */}
       <AnimatePresence mode="wait">
@@ -61,37 +61,37 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 pointer-events-none" />
 
       {/* Hero Content with Glassmorphic Container (z-20 above overlay) */}
-      <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 pb-12 flex flex-col items-center">
+      <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 text-center pt-8 pb-10 md:pt-20 md:pb-12 flex flex-col items-center">
         {/* Glassmorphism Wrapper for main titles and rotating slogans */}
-        <div className="w-full max-w-4xl p-6 sm:p-10 rounded-3xl bg-black/30 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.6)] flex flex-col items-center">
+        <div className="w-full max-w-4xl p-4 sm:p-6 md:p-10 rounded-2xl sm:rounded-3xl bg-black/30 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.6)] flex flex-col items-center">
           {/* Subtle pill tag */}
           <motion.div
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.08] border border-white/20 backdrop-blur-md mb-6 shadow-lg shadow-black/40"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-white/[0.08] border border-white/20 backdrop-blur-md mb-4 sm:mb-6 shadow-lg shadow-black/40"
           >
-            <Sparkles className="w-3.5 h-3.5 text-zinc-200 animate-pulse" />
-            <span className="text-[11px] font-medium tracking-[0.25em] text-zinc-200 uppercase drop-shadow-md">
+            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-zinc-200 animate-pulse shrink-0" />
+            <span className="text-[9px] sm:text-[11px] font-medium tracking-[0.18em] sm:tracking-[0.25em] text-zinc-200 uppercase drop-shadow-md">
               Ingeniería Limnológica & Monitoreo Ambiental
             </span>
           </motion.div>
 
-          {/* Huge Bold Title with Drop Shadow */}
+          {/* Huge Bold Title with Drop Shadow - Mobile First Typography */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.3 }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white uppercase leading-none drop-shadow-[0_6px_24px_rgba(0,0,0,0.95)]"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white uppercase leading-none drop-shadow-[0_6px_24px_rgba(0,0,0,0.95)]"
           >
             ICTIOS
-            <span className="block text-2xl sm:text-4xl md:text-5xl font-light tracking-[0.18em] text-zinc-200 mt-2 sm:mt-3 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+            <span className="block text-xl sm:text-3xl md:text-5xl font-light tracking-[0.14em] sm:tracking-[0.18em] text-zinc-200 mt-1.5 sm:mt-3 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
               CONSULTORA AMBIENTAL
             </span>
           </motion.h1>
 
           {/* Dynamic Rotating Slogans */}
-          <div className="min-h-[100px] sm:min-h-[85px] mt-6 max-w-2xl flex items-center justify-center">
+          <div className="min-h-[85px] sm:min-h-[90px] mt-4 sm:mt-6 max-w-2xl flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlogan.title}
@@ -99,15 +99,15 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="flex flex-col items-center"
+                className="flex flex-col items-center text-center px-2"
               >
-                <div className="inline-block px-3 py-0.5 rounded-full bg-white/10 border border-white/25 text-[10px] font-mono tracking-widest uppercase text-zinc-200 mb-2 shadow-md">
+                <div className="inline-block px-2.5 sm:px-3 py-0.5 rounded-full bg-white/10 border border-white/25 text-[9px] sm:text-[10px] font-mono tracking-widest uppercase text-zinc-200 mb-2 shadow-md">
                   {currentSlogan.badge}
                 </div>
-                <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-white mb-2 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-semibold tracking-tight text-white mb-1.5 sm:mb-2 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
                   &ldquo;{currentSlogan.title}&rdquo;
                 </h2>
-                <p className="text-sm sm:text-base text-zinc-200 max-w-xl font-light leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
+                <p className="text-xs sm:text-sm md:text-base text-zinc-200 max-w-xl font-light leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                   {currentSlogan.subtitle}
                 </p>
               </motion.div>
@@ -119,11 +119,11 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.5 }}
-            className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+            className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto"
           >
             <a
               href="#servicios"
-              className="w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-semibold tracking-widest uppercase text-black bg-white hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.6)] hover:scale-[1.02] flex items-center justify-center gap-2 group"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-xs font-semibold tracking-widest uppercase text-black bg-white hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.6)] hover:scale-[1.02] flex items-center justify-center gap-2 group"
             >
               <span>Explorar Servicios</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -131,7 +131,7 @@ export function Hero() {
 
             <a
               href="#equipo"
-              className="w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-semibold tracking-widest uppercase text-white bg-zinc-950/70 hover:bg-zinc-900 border border-white/20 hover:border-white/50 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-xs font-semibold tracking-widest uppercase text-white bg-zinc-950/70 hover:bg-zinc-900 border border-white/20 hover:border-white/50 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] flex items-center justify-center gap-2"
             >
               <span>Ver Equipo de Trabajo</span>
             </a>
@@ -143,35 +143,35 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.7 }}
-          className="mt-8 pt-6 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 text-left w-full max-w-4xl"
+          className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4 md:gap-8 text-left w-full max-w-4xl"
         >
-          <div className="bg-black/30 backdrop-blur-sm p-3 rounded-2xl border border-white/5">
-            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight drop-shadow-md">25+</div>
-            <div className="text-[10px] uppercase tracking-wider text-zinc-300 font-mono mt-0.5">Años de Trayectoria</div>
+          <div className="bg-black/30 backdrop-blur-sm p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-white/5">
+            <div className="text-lg sm:text-2xl font-extrabold text-white tracking-tight drop-shadow-md">25+</div>
+            <div className="text-[9px] sm:text-[10px] uppercase tracking-wider text-zinc-300 font-mono mt-0.5">Años de Trayectoria</div>
           </div>
-          <div className="bg-black/30 backdrop-blur-sm p-3 rounded-2xl border border-white/5">
-            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight drop-shadow-md">50+</div>
-            <div className="text-[10px] uppercase tracking-wider text-zinc-300 font-mono mt-0.5">Equipos Especializados</div>
+          <div className="bg-black/30 backdrop-blur-sm p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-white/5">
+            <div className="text-lg sm:text-2xl font-extrabold text-white tracking-tight drop-shadow-md">50+</div>
+            <div className="text-[9px] sm:text-[10px] uppercase tracking-wider text-zinc-300 font-mono mt-0.5">Equipos Especializados</div>
           </div>
-          <div className="bg-black/30 backdrop-blur-sm p-3 rounded-2xl border border-white/5">
-            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight drop-shadow-md">100%</div>
-            <div className="text-[10px] uppercase tracking-wider text-zinc-300 font-mono mt-0.5">Operatividad en Campo</div>
+          <div className="bg-black/30 backdrop-blur-sm p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-white/5">
+            <div className="text-lg sm:text-2xl font-extrabold text-white tracking-tight drop-shadow-md">100%</div>
+            <div className="text-[9px] sm:text-[10px] uppercase tracking-wider text-zinc-300 font-mono mt-0.5">Operatividad en Campo</div>
           </div>
-          <div className="bg-black/30 backdrop-blur-sm p-3 rounded-2xl border border-white/5">
-            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight drop-shadow-md">15+</div>
-            <div className="text-[10px] uppercase tracking-wider text-zinc-300 font-mono mt-0.5">Avales Oficiales</div>
+          <div className="bg-black/30 backdrop-blur-sm p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-white/5">
+            <div className="text-lg sm:text-2xl font-extrabold text-white tracking-tight drop-shadow-md">15+</div>
+            <div className="text-[9px] sm:text-[10px] uppercase tracking-wider text-zinc-300 font-mono mt-0.5">Avales Oficiales</div>
           </div>
         </motion.div>
       </div>
 
-      {/* Animated Subtle Scroll Indicator */}
+      {/* Animated Subtle Scroll Indicator - hidden on small mobile to avoid overlap */}
       <motion.a
         href="#porque-elegirnos"
         aria-label="Scroll to Por qué elegirnos"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.8 }}
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 text-zinc-300 hover:text-white transition-colors cursor-pointer group"
+        className="hidden md:flex absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex-col items-center gap-1 text-zinc-300 hover:text-white transition-colors cursor-pointer group"
       >
         <span className="text-[9px] uppercase tracking-[0.25em] font-mono text-zinc-300 group-hover:text-zinc-100 drop-shadow">
           Deslizar
