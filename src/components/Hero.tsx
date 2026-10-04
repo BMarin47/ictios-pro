@@ -18,12 +18,16 @@ export function Hero() {
 
   const currentSlogan = HERO_SLOGANS[sloganIndex];
 
-  // Solely clean, text-free original photographs uploaded by the user
+  // 4 fotografías limpias en orden estricto proporcionadas por el usuario:
+  // 1: Motorhome + Bote Sea Runner
+  // 2: Equipo de Expertos en el bote
+  // 3: Bote verde con equipamiento científico Raytheon y cordillera
+  // 4: Motor Honda ICTIOS al atardecer
   const HERO_BACKGROUNDS = [
-    "/images/motorhome-bote.jpg",
-    "/images/equipo-expertos.jpg",
-    "/images/honda-ictios-atardecer.jpg",
-    "/images/motorhome-bote.jpg",
+    "/images/hero-1-motorhome.jpg",
+    "/images/hero-2-equipo.jpg",
+    "/images/hero-3-bote-verde.jpg",
+    "/images/hero-4-atardecer.jpg",
   ];
 
   return (
