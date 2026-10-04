@@ -34,51 +34,53 @@ export function Hero() {
     <>
       <section
         id="hero"
-        className="relative w-full h-[55vh] md:h-screen overflow-hidden bg-black text-white flex items-center justify-center"
+        className="relative w-full flex flex-col md:block md:h-screen md:overflow-hidden bg-black text-white"
       >
-        {/* Background Image - strictly natural proportions: object-cover object-center, ZERO zoom */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={sloganIndex}
-            className="absolute inset-0 z-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <Image
-              src={HERO_BACKGROUNDS[sloganIndex]}
-              alt={currentSlogan.title}
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 100vw"
-              className="object-cover object-center"
-            />
-          </motion.div>
-        </AnimatePresence>
+        {/* Dedicated Image Container: aspect-video on mobile, fullscreen on desktop */}
+        <div className="relative w-full aspect-video md:absolute md:inset-0 md:h-screen md:aspect-auto mt-14 sm:mt-16 md:mt-0 overflow-hidden">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={sloganIndex}
+              className="absolute inset-0 z-0"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+            >
+              <Image
+                src={HERO_BACKGROUNDS[sloganIndex]}
+                alt={currentSlogan.title}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 100vw"
+                className="object-cover object-center"
+              />
+            </motion.div>
+          </AnimatePresence>
 
-        {/* Subtle, elegant Starlink overlay: soft tint and bottom gradient */}
-        <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30 z-10 pointer-events-none" />
+          {/* Desktop-only subtle Starlink overlays for text readability */}
+          <div className="hidden md:block absolute inset-0 bg-black/40 z-10 pointer-events-none" />
+          <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30 z-10 pointer-events-none" />
+        </div>
 
-        {/* Hero Content with Glassmorphic Container (z-20 above overlay) */}
-        <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 md:px-8 text-center pt-8 md:pt-0 flex flex-col items-center">
-          {/* Glassmorphism Wrapper for main titles and rotating slogans */}
-          <div className="w-full max-w-2xl p-3 sm:p-5 md:p-8 rounded-xl sm:rounded-3xl bg-black/40 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.6)] flex flex-col items-center">
+        {/* Text Container: Below image on mobile (bg-black), floating centered on desktop */}
+        <div className="flex-1 flex flex-col justify-center items-center p-6 bg-black md:bg-transparent md:absolute md:inset-0 md:z-20">
+          {/* Glassmorphism only on desktop */}
+          <div className="w-full max-w-2xl flex flex-col items-center text-center p-0 md:p-8 md:rounded-3xl md:bg-black/40 md:backdrop-blur-md md:border md:border-white/10 md:shadow-[0_8px_32px_0_rgba(0,0,0,0.6)]">
             {/* Subtle pill tag */}
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/[0.08] border border-white/20 backdrop-blur-md mb-1.5 sm:mb-3 shadow-lg shadow-black/40"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.08] border border-white/20 mb-2.5 sm:mb-4 shadow-lg shadow-black/40"
             >
-              <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-zinc-200 animate-pulse shrink-0" />
-              <span className="text-[8px] sm:text-[10px] md:text-[11px] font-medium tracking-[0.14em] sm:tracking-[0.25em] text-zinc-200 uppercase drop-shadow-md">
+              <Sparkles className="w-3 h-3 text-zinc-200 animate-pulse shrink-0" />
+              <span className="text-[9px] sm:text-[11px] font-medium tracking-[0.16em] sm:tracking-[0.25em] text-zinc-200 uppercase drop-shadow-md">
                 Ingeniería Limnológica & Monitoreo Ambiental
               </span>
             </motion.div>
 
-            {/* Huge Bold Title - strictly text-3xl md:text-6xl */}
+            {/* Title with responsive scaling: text-3xl on mobile, text-6xl on desktop */}
             <motion.h1
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
@@ -86,13 +88,13 @@ export function Hero() {
               className="text-3xl md:text-6xl font-black tracking-tighter text-white uppercase leading-none drop-shadow-[0_6px_24px_rgba(0,0,0,0.95)]"
             >
               ICTIOS
-              <span className="block text-xs sm:text-lg md:text-3xl font-light tracking-[0.14em] sm:tracking-[0.18em] text-zinc-200 mt-0.5 sm:mt-1.5 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+              <span className="block text-sm sm:text-lg md:text-3xl font-light tracking-[0.14em] sm:tracking-[0.18em] text-zinc-200 mt-1 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
                 CONSULTORA AMBIENTAL
               </span>
             </motion.h1>
 
             {/* Dynamic Rotating Slogans */}
-            <div className="min-h-[46px] sm:min-h-[60px] md:min-h-[75px] mt-1.5 sm:mt-3 max-w-lg flex items-center justify-center">
+            <div className="min-h-[55px] sm:min-h-[65px] md:min-h-[75px] mt-2.5 sm:mt-4 max-w-lg flex items-center justify-center">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentSlogan.title}
@@ -102,29 +104,29 @@ export function Hero() {
                   transition={{ duration: 0.35, ease: "easeOut" }}
                   className="flex flex-col items-center text-center px-1"
                 >
-                  <div className="inline-block px-2 py-0.5 rounded-full bg-white/10 border border-white/25 text-[7px] sm:text-[9px] font-mono tracking-widest uppercase text-zinc-200 mb-0.5 sm:mb-1 shadow-md">
+                  <div className="inline-block px-2.5 py-0.5 rounded-full bg-white/10 border border-white/25 text-[8px] sm:text-[9px] font-mono tracking-widest uppercase text-zinc-200 mb-1 shadow-md">
                     {currentSlogan.badge}
                   </div>
-                  <h2 className="text-xs sm:text-base md:text-xl font-semibold tracking-tight text-white mb-0.5 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+                  <h2 className="text-sm sm:text-base md:text-xl font-semibold tracking-tight text-white mb-0.5 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
                     &ldquo;{currentSlogan.title}&rdquo;
                   </h2>
-                  <p className="text-[10px] sm:text-xs md:text-sm text-zinc-300 font-light leading-snug line-clamp-1 sm:line-clamp-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
+                  <p className="text-[11px] sm:text-xs md:text-sm text-zinc-300 font-light leading-snug line-clamp-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                     {currentSlogan.subtitle}
                   </p>
                 </motion.div>
               </AnimatePresence>
             </div>
 
-            {/* Apple-style Buttons */}
+            {/* Action Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.5 }}
-              className="mt-2 sm:mt-4 flex flex-row items-center justify-center gap-2 sm:gap-4 w-full sm:w-auto"
+              className="mt-4 sm:mt-5 flex flex-row items-center justify-center gap-3 w-full sm:w-auto"
             >
               <a
                 href="#servicios"
-                className="px-4 sm:px-7 py-1.5 sm:py-3 rounded-full text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-black bg-white hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-[1.02] flex items-center justify-center gap-1.5 group touch-manipulation"
+                className="px-5 sm:px-7 py-2.5 sm:py-3 rounded-full text-xs font-semibold tracking-wider uppercase text-black bg-white hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-[1.02] flex items-center justify-center gap-1.5 group touch-manipulation"
               >
                 <span>Servicios</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -132,7 +134,7 @@ export function Hero() {
 
               <a
                 href="#equipo"
-                className="px-4 sm:px-7 py-1.5 sm:py-3 rounded-full text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-white bg-zinc-950/70 hover:bg-zinc-900 border border-white/20 hover:border-white/50 backdrop-blur-md transition-all duration-300 flex items-center justify-center gap-1.5 touch-manipulation"
+                className="px-5 sm:px-7 py-2.5 sm:py-3 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-zinc-950/70 hover:bg-zinc-900 border border-white/20 hover:border-white/50 md:backdrop-blur-md transition-all duration-300 flex items-center justify-center gap-1.5 touch-manipulation"
               >
                 <span>Equipo</span>
               </a>
