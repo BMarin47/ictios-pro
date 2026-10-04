@@ -18,11 +18,12 @@ export function Hero() {
 
   const currentSlogan = HERO_SLOGANS[sloganIndex];
 
+  // Solely clean, text-free original photographs uploaded by the user
   const HERO_BACKGROUNDS = [
     "/images/motorhome-bote.jpg",
     "/images/equipo-expertos.jpg",
-    "/images/profesionalismo-batimetria.png",
     "/images/honda-ictios-atardecer.jpg",
+    "/images/motorhome-bote.jpg",
   ];
 
   return (
@@ -30,7 +31,7 @@ export function Hero() {
       id="hero"
       className="relative h-screen w-full overflow-hidden bg-black text-white flex items-center justify-center"
     >
-      {/* Background Image with natural scale and crop via center 80% */}
+      {/* Background Image - strictly natural proportions: object-cover object-center, ZERO zoom */}
       <AnimatePresence mode="wait">
         <motion.div
           key={sloganIndex}
@@ -46,16 +47,16 @@ export function Hero() {
             fill
             priority
             sizes="100vw"
-            className="scale-105 transition-transform duration-1000 ease-out"
-            style={{ objectFit: "cover", objectPosition: "center 80%" }}
+            className="object-cover object-center"
           />
         </motion.div>
       </AnimatePresence>
 
-      {/* Camuflaje con Degradado Estratégico (Overlay) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/40 to-black/80 z-10 pointer-events-none" />
+      {/* Subtle, elegant Starlink overlay: soft tint and bottom gradient */}
+      <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 pointer-events-none" />
 
-      {/* Hero Content with Glassmorphic Container (z-20 por encima del overlay oscuro) */}
+      {/* Hero Content with Glassmorphic Container (z-20 above overlay) */}
       <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 pb-12 flex flex-col items-center">
         {/* Glassmorphism Wrapper for main titles and rotating slogans */}
         <div className="w-full max-w-4xl p-6 sm:p-10 rounded-3xl bg-black/30 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.6)] flex flex-col items-center">
