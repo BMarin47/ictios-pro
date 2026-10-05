@@ -104,9 +104,9 @@ export const BENTO_CARDS: BentoItem[] = [
 export const MAIN_SERVICES: ServiceItem[] = [
   {
     id: "calidad-agua",
-    title: "Estudios de Calidad de Agua",
+    title: "Estudios de Calidad de Agua & Fauna Acuática",
     category: "Química & Limnología",
-    description: "Monitoreos físico-químicos y limnológicos integrales para centrales hidroeléctricas, industrias y cuencas hídricas con instrumental certificado in situ.",
+    description: "Monitoreos físico-químicos, limnológicos y relevamiento de fauna acuática para centrales hidroeléctricas, industrias y cuencas hídricas con instrumental certificado in situ.",
     details: [
       "Instrumental multiparamétrico HANNA de última generación",
       "Muestreos de profundidad con botellas Van Dörn y Meyer",
@@ -117,22 +117,22 @@ export const MAIN_SERVICES: ServiceItem[] = [
   },
   {
     id: "impacto-ambiental",
-    title: "Estudios de Impacto Ambiental",
+    title: "Estudios de Impacto Ambiental & Líneas de Base",
     category: "Gestión & Normativa",
-    description: "Elaboración de Evaluaciones de Impacto Ambiental (EsIA), auditorías técnicas especializadas y planes de gestión sustentable bajo lineamientos ISO 14001.",
+    description: "Elaboración de Evaluaciones de Impacto Ambiental (EsIA), líneas de base ambiental, auditorías técnicas especializadas y planes de rescate de fauna bajo lineamientos ISO 14001.",
     details: [
       "Estudios de Impacto Ambiental (EsIA) para presas, minería e industrias",
       "Planes de Gestión Ambiental basados en lineamientos ISO 14001",
-      "Monitoreos de vegetación acuática, flora y fauna terrestre asociada",
+      "Monitoreos de vegetación acuática, flora y rescate de fauna silvestre",
       "Emisión de dictámenes técnicos y peritajes ante organismos de control",
     ],
     imageUrl: "/images/services/servicio2.jpg",
   },
   {
     id: "ictiofauna",
-    title: "Estudios de Ictiofauna",
+    title: "Estudios Ictícolas & Relevamiento de Peces",
     category: "Ictiología & Biodiversidad",
-    description: "Relevamiento de comunidades ícticas silvestres, dinámicas reproductivas, censos poblacionales y programas de marcado científico en sistemas fluviales y lacustres.",
+    description: "Relevamiento de comunidades ícticas silvestres, dinámicas reproductivas, ictiología aplicada, censos poblacionales y programas de rescate de fauna y marcado científico en sistemas fluviales y lacustres.",
     details: [
       "Pesca eléctrica portátil de investigación SAMUS Mod. 725 MP",
       "Baterías de redes estandarizadas y muestreos de selectividad",
@@ -143,9 +143,9 @@ export const MAIN_SERVICES: ServiceItem[] = [
   },
   {
     id: "batimetria",
-    title: "Estudios Batimétricos",
+    title: "Estudios Batimétricos & Hidrografía",
     category: "Hidrografía & Embalses",
-    description: "Estudios de colmatación, curvas cota-volumen y relevamientos batimétricos de alta resolución con tecnología acústica y posicionamiento satelital de precisión.",
+    description: "Estudios de colmatación, curvas cota-volumen y relevamientos batimétricos de alta resolución con tecnología acústica y posicionamiento satelital de precisión para proyectos de alta complejidad.",
     details: [
       "Ecosondas de precisión hidrográfica Raytheon, Apelco y Garmin",
       "Relevamientos con georreferenciación GPS diferencial milimétrica",

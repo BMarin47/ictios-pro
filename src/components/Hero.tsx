@@ -79,7 +79,7 @@ export function Hero() {
             >
               <Sparkles className="w-3 h-3 text-zinc-200 animate-pulse shrink-0" />
               <span className="text-[9px] sm:text-[11px] font-medium tracking-[0.16em] sm:tracking-[0.25em] text-zinc-200 uppercase drop-shadow-md">
-                Ingeniería Limnológica & Monitoreo Ambiental
+                Relevamiento de Fauna Acuática & Monitoreo de Biodiversidad
               </span>
             </motion.div>
 
@@ -91,8 +91,8 @@ export function Hero() {
               className="text-3xl md:text-6xl font-black tracking-tighter text-white uppercase leading-none drop-shadow-[0_6px_24px_rgba(0,0,0,0.95)]"
             >
               ICTIOS
-              <span className="block text-sm sm:text-lg md:text-3xl font-light tracking-[0.14em] sm:tracking-[0.18em] text-zinc-200 mt-1 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
-                CONSULTORA AMBIENTAL
+              <span className="block text-sm sm:text-lg md:text-2xl lg:text-3xl font-light tracking-[0.12em] sm:tracking-[0.16em] text-zinc-200 mt-1 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+                Consultoría Ambiental &bull; Estudios Ictícolas
               </span>
             </motion.h1>
 
@@ -110,9 +110,9 @@ export function Hero() {
                   <div className="inline-block px-2.5 py-0.5 rounded-full bg-white/10 border border-white/25 text-[8px] sm:text-[9px] font-mono tracking-widest uppercase text-zinc-200 mb-1 shadow-md">
                     {currentSlogan.badge}
                   </div>
-                  <h2 className="text-sm sm:text-base md:text-xl font-semibold tracking-tight text-white mb-0.5 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+                  <p className="text-sm sm:text-base md:text-xl font-semibold tracking-tight text-white mb-0.5 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
                     &ldquo;{currentSlogan.title}&rdquo;
-                  </h2>
+                  </p>
                   <p className="text-[11px] sm:text-xs md:text-sm text-zinc-300 font-light leading-snug line-clamp-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                     {currentSlogan.subtitle}
                   </p>

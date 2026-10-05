@@ -73,7 +73,7 @@ export function MainServices() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white uppercase"
             >
-              Servicios al Cliente
+              Servicios de Consultoría Ambiental
             </motion.h2>
           </div>
 
@@ -127,9 +127,9 @@ export function MainServices() {
               <div className="p-5 sm:p-6 flex flex-col justify-between flex-1">
                 <div>
                   <div className="flex items-start justify-between gap-2 mb-2 sm:mb-3">
-                    <h3 className="text-base sm:text-lg font-bold tracking-tight text-white uppercase group-hover:text-zinc-100 transition-colors leading-snug">
+                    <h2 className="text-base sm:text-lg font-bold tracking-tight text-white uppercase group-hover:text-zinc-100 transition-colors leading-snug">
                       {service.title}
-                    </h3>
+                    </h2>
                     <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 group-hover:bg-white group-hover:text-black group-hover:rotate-45 transition-all duration-300 shrink-0">
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </div>

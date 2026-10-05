@@ -7,9 +7,12 @@ import { Footer } from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Algunos de Nuestros Clientes | Ictios Consultora Ambiental",
+  title: "Nuestros Clientes",
   description:
-    "Clientes de Ictios S.A.: Pampa Energía, AES Argentina, Barrick, Arcor, Central Puerto, Irrigación, UNCUYO y más de 20 empresas y organismos evaluados en todo el país.",
+    "Clientes corporativos de Ictios: Pampa Energía, AES Argentina, Barrick, Arcor, Central Puerto, UNCUYO e Irrigación. Consultoría ambiental y estudios ictícolas auditados en todo el país.",
+  alternates: {
+    canonical: "https://ictios-pro.vercel.app/clientes",
+  },
 };
 
 export default function ClientesPage() {
