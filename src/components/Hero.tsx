@@ -32,8 +32,12 @@ export function Hero() {
 
   return (
     <>
-      <section
+      <motion.section
         id="hero"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="relative w-full flex flex-col md:block md:h-screen md:overflow-hidden bg-black text-white"
       >
         {/* Dedicated Image Container: aspect-video on mobile, fullscreen on desktop */}
@@ -63,10 +67,9 @@ export function Hero() {
           <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30 z-10 pointer-events-none" />
         </div>
 
-        {/* Text Container: Below image on mobile (bg-black), floating centered on desktop */}
-        <div className="flex-1 flex flex-col justify-center items-center p-6 bg-black md:bg-transparent md:absolute md:inset-0 md:z-20">
-          {/* Glassmorphism only on desktop */}
-          <div className="w-full max-w-2xl flex flex-col items-center text-center p-0 md:p-8 md:rounded-3xl md:bg-black/40 md:backdrop-blur-md md:border md:border-white/10 md:shadow-[0_8px_32px_0_rgba(0,0,0,0.6)]">
+        {/* Text Container: Glassmorphism Dark Premium on both mobile and desktop */}
+        <div className="flex-1 flex flex-col justify-center items-center p-4 sm:p-6 md:bg-transparent md:absolute md:inset-0 md:z-20">
+          <div className="w-full max-w-2xl flex flex-col items-center text-center p-5 sm:p-7 md:p-8 rounded-2xl md:rounded-3xl bg-black/40 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.6)]">
             {/* Subtle pill tag */}
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -134,7 +137,7 @@ export function Hero() {
 
               <a
                 href="#equipo"
-                className="px-5 sm:px-7 py-2.5 sm:py-3 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-zinc-950/70 hover:bg-zinc-900 border border-white/20 hover:border-white/50 md:backdrop-blur-md transition-all duration-300 flex items-center justify-center gap-1.5 touch-manipulation"
+                className="px-5 sm:px-7 py-2.5 sm:py-3 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-black/40 hover:bg-white/10 border border-white/20 hover:border-white/50 backdrop-blur-md transition-all duration-300 flex items-center justify-center gap-1.5 touch-manipulation"
               >
                 <span>Equipo</span>
               </a>
@@ -144,8 +147,8 @@ export function Hero() {
 
         {/* Desktop Animated Scroll Indicator */}
         <motion.a
-          href="#porque-elegirnos"
-          aria-label="Scroll to Por qué elegirnos"
+          href="#nuestros-numeros"
+          aria-label="Scroll to Nuestros Números"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
@@ -161,37 +164,7 @@ export function Hero() {
             <ChevronDown className="w-4 h-4 text-zinc-300 group-hover:text-white" />
           </motion.div>
         </motion.a>
-      </section>
-
-      {/* Quick Stats Strip - Dedicated section immediately below the Hero */}
-      <section className="relative z-20 bg-zinc-950 border-y border-zinc-800/80 py-5 sm:py-8 px-4 sm:px-6 md:px-8 lg:px-12">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4 md:gap-8">
-          <div className="bg-black/40 backdrop-blur-sm p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-white/5">
-            <div className="text-xl sm:text-3xl font-extrabold text-white tracking-tight">25+</div>
-            <div className="text-[9px] sm:text-[10px] uppercase tracking-wider text-zinc-400 font-mono mt-0.5">
-              Años de Trayectoria
-            </div>
-          </div>
-          <div className="bg-black/40 backdrop-blur-sm p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-white/5">
-            <div className="text-xl sm:text-3xl font-extrabold text-white tracking-tight">50+</div>
-            <div className="text-[9px] sm:text-[10px] uppercase tracking-wider text-zinc-400 font-mono mt-0.5">
-              Equipos Especializados
-            </div>
-          </div>
-          <div className="bg-black/40 backdrop-blur-sm p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-white/5">
-            <div className="text-xl sm:text-3xl font-extrabold text-white tracking-tight">100%</div>
-            <div className="text-[9px] sm:text-[10px] uppercase tracking-wider text-zinc-400 font-mono mt-0.5">
-              Operatividad en Campo
-            </div>
-          </div>
-          <div className="bg-black/40 backdrop-blur-sm p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-white/5">
-            <div className="text-xl sm:text-3xl font-extrabold text-white tracking-tight">15+</div>
-            <div className="text-[9px] sm:text-[10px] uppercase tracking-wider text-zinc-400 font-mono mt-0.5">
-              Avales Oficiales
-            </div>
-          </div>
-        </div>
-      </section>
+      </motion.section>
     </>
   );
 }

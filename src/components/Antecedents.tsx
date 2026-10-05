@@ -6,7 +6,14 @@ import { ANTECEDENTS_LIST } from "@/data/ictiosData";
 
 export function Antecedents() {
   return (
-    <section id="antecedentes" className="relative py-12 px-4 sm:px-6 md:py-24 md:px-8 lg:px-12 bg-zinc-950 text-white overflow-hidden">
+    <motion.section
+      id="antecedentes"
+      initial={{ opacity: 0, y: 35 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="relative py-14 px-4 sm:px-6 md:py-24 md:px-8 lg:px-12 bg-black text-white overflow-hidden"
+    >
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 right-10 w-[500px] h-[300px] bg-zinc-800/10 rounded-full blur-[130px] pointer-events-none" />
 
@@ -18,7 +25,7 @@ export function Antecedents() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase tracking-[0.25em] font-mono text-zinc-400 mb-3"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-[10px] uppercase tracking-[0.25em] font-mono text-zinc-400 mb-3"
           >
             <Sparkles className="w-3 h-3 text-zinc-300" />
             <span>Validez y Rigor Institucional</span>
@@ -54,11 +61,11 @@ export function Antecedents() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="group p-4 sm:p-6 rounded-2xl bg-black/60 border border-zinc-800/80 hover:border-zinc-600/80 backdrop-blur-md transition-all duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_rgba(255,255,255,0.03)]"
+              className="group p-4 sm:p-6 rounded-2xl bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/25 hover:bg-black/60 transition-all duration-300 flex flex-col justify-between shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] hover:shadow-[0_12px_40px_0_rgba(255,255,255,0.06)]"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3 sm:mb-4">
-                  <span className="inline-flex items-center gap-1.5 text-[9px] sm:text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-zinc-300">
+                  <span className="inline-flex items-center gap-1.5 text-[9px] sm:text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-zinc-300">
                     <Building2 className="w-3 h-3 text-zinc-400" />
                     {item.entity}
                   </span>
@@ -70,7 +77,7 @@ export function Antecedents() {
                 </p>
               </div>
 
-              <div className="mt-4 sm:mt-5 pt-3 border-t border-zinc-900/80 flex items-center justify-between text-[9px] sm:text-[10px] font-mono text-zinc-400">
+              <div className="mt-4 sm:mt-5 pt-3 border-t border-white/10 flex items-center justify-between text-[9px] sm:text-[10px] font-mono text-zinc-400">
                 <span>Registro Oficial</span>
                 <span className="text-zinc-400 group-hover:text-zinc-200">Verificado</span>
               </div>
@@ -84,7 +91,7 @@ export function Antecedents() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mt-8 sm:mt-12 rounded-2xl sm:rounded-3xl p-5 sm:p-8 bg-zinc-950/80 border border-zinc-800 flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6 text-center md:text-left"
+          className="mt-8 sm:mt-12 rounded-2xl sm:rounded-3xl p-5 sm:p-8 bg-black/40 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6 text-center md:text-left"
         >
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
@@ -102,12 +109,12 @@ export function Antecedents() {
 
           <a
             href="#contacto"
-            className="w-full md:w-auto shrink-0 px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider text-black bg-white hover:bg-zinc-200 transition-colors text-center"
+            className="w-full md:w-auto shrink-0 px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider text-black bg-white hover:bg-zinc-200 transition-colors text-center shadow-[0_0_20px_rgba(255,255,255,0.2)]"
           >
             Solicitar Antecedentes
           </a>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

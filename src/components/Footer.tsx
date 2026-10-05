@@ -9,12 +9,12 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-black text-white border-t border-zinc-900 py-10 sm:py-16 relative z-10 px-4 sm:px-6 md:px-8 lg:px-12">
+    <footer className="bg-black text-white border-t border-white/10 py-10 sm:py-16 relative z-10 px-4 sm:px-6 md:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8 pb-8 sm:pb-12 border-b border-zinc-900">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8 pb-8 sm:pb-12 border-b border-white/10">
           {/* Brand info */}
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-zinc-900 border border-white/20 flex items-center justify-center shrink-0">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center shrink-0">
               <Waves className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
             </div>
             <div className="flex flex-col">
@@ -33,7 +33,7 @@ export function Footer() {
               href={CONTACT_INFO.social.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-zinc-900/60 border border-zinc-800 hover:border-zinc-500 text-xs font-mono uppercase text-zinc-400 hover:text-white transition-all"
+              className="px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/30 text-xs font-mono uppercase text-zinc-400 hover:text-white transition-all shadow-[0_4px_16px_rgba(0,0,0,0.4)]"
             >
               Facebook
             </a>
@@ -41,14 +41,14 @@ export function Footer() {
               href={CONTACT_INFO.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-zinc-900/60 border border-zinc-800 hover:border-zinc-500 text-xs font-mono uppercase text-zinc-400 hover:text-white transition-all"
+              className="px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/30 text-xs font-mono uppercase text-zinc-400 hover:text-white transition-all shadow-[0_4px_16px_rgba(0,0,0,0.4)]"
             >
               Instagram
             </a>
             <button
               onClick={scrollToTop}
               aria-label="Volver arriba"
-              className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-white hover:text-black border border-white/20 flex items-center justify-center transition-all cursor-pointer touch-manipulation"
+              className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/40 backdrop-blur-md hover:bg-white hover:text-black border border-white/10 flex items-center justify-center transition-all cursor-pointer touch-manipulation shadow-[0_4px_16px_rgba(0,0,0,0.4)]"
             >
               <ArrowUp className="w-4 h-4" />
             </button>

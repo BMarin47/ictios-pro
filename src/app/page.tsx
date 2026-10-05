@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
+import { NuestrosNumeros } from "@/components/NuestrosNumeros";
 import { BentoGrid } from "@/components/BentoGrid";
 import { MainServices } from "@/components/MainServices";
 import { Team } from "@/components/Team";
@@ -14,6 +15,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <NuestrosNumeros />
         <BentoGrid />
         <MainServices />
         <Team />

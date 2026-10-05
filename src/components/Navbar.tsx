@@ -8,6 +8,7 @@ import { CONTACT_INFO } from "@/data/ictiosData";
 
 const NAV_ITEMS = [
   { name: "Inicio", href: "/#hero" },
+  { name: "Números", href: "/#nuestros-numeros" },
   { name: "Por Qué Elegirnos", href: "/#porque-elegirnos" },
   { name: "Servicios", href: "/#servicios" },
   { name: "Equipo", href: "/#equipo" },
@@ -32,14 +33,14 @@ export function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-black/85 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-black/50 py-3 sm:py-3.5"
-            : "bg-black/40 backdrop-blur-md border-b border-white/5 py-3.5 sm:py-5"
+            ? "bg-black/70 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-black/80 py-3 sm:py-3.5"
+            : "bg-black/40 backdrop-blur-md border-b border-white/10 py-3.5 sm:py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Brand Logo Minimalist */}
           <Link href="/#hero" className="flex items-center gap-2.5 sm:gap-3 group">
-            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-zinc-900 border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:border-white/50 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] shrink-0">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:border-white/40 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] shrink-0">
               <Waves className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-100 transition-transform group-hover:scale-110" />
             </div>
             <div className="flex flex-col">
@@ -53,7 +54,7 @@ export function Navbar() {
           </Link>
 
           {/* Centered Desktop Menu */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-7">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.name}
@@ -70,7 +71,7 @@ export function Navbar() {
           <div className="hidden sm:flex items-center gap-3">
             <a
               href="#contacto"
-              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full text-xs font-medium text-white tracking-wider uppercase bg-white/5 hover:bg-white hover:text-black border border-white/20 hover:border-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,255,255,0.35)]"
+              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full text-xs font-medium text-white tracking-wider uppercase bg-black/40 backdrop-blur-md hover:bg-white hover:text-black border border-white/10 hover:border-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,255,255,0.3)] shadow-[0_4px_20px_rgba(0,0,0,0.4)]"
             >
               <span>Contacto</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -96,7 +97,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-[56px] sm:top-[65px] z-40 bg-zinc-950/98 backdrop-blur-2xl border-b border-zinc-800 p-5 sm:p-6 lg:hidden max-h-[calc(100vh-60px)] overflow-y-auto shadow-2xl"
+            className="fixed inset-x-0 top-[56px] sm:top-[65px] z-40 bg-black/80 backdrop-blur-2xl border-b border-white/10 p-5 sm:p-6 lg:hidden max-h-[calc(100vh-60px)] overflow-y-auto shadow-2xl"
           >
             <div className="flex flex-col space-y-3">
               {NAV_ITEMS.map((item) => (
@@ -104,7 +105,7 @@ export function Navbar() {
                   key={item.name}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-xs sm:text-sm font-medium text-zinc-300 hover:text-white tracking-wider uppercase py-2.5 border-b border-zinc-900 transition-colors"
+                  className="text-xs sm:text-sm font-medium text-zinc-300 hover:text-white tracking-wider uppercase py-2.5 border-b border-white/5 transition-colors"
                 >
                   {item.name}
                 </a>

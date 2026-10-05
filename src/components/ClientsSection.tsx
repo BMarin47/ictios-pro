@@ -10,7 +10,14 @@ export function ClientsSection() {
   const marqueeLogos = [...FEATURED_CLIENT_LOGOS, ...FEATURED_CLIENT_LOGOS, ...FEATURED_CLIENT_LOGOS];
 
   return (
-    <section id="clientes" className="relative py-12 px-4 sm:px-6 md:py-24 md:px-8 lg:px-12 bg-black text-white overflow-hidden">
+    <motion.section
+      id="clientes"
+      initial={{ opacity: 0, y: 35 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="relative py-14 px-4 sm:px-6 md:py-24 md:px-8 lg:px-12 bg-black text-white overflow-hidden"
+    >
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[850px] h-[350px] bg-zinc-800/10 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[450px] h-[250px] bg-sky-950/15 rounded-full blur-[130px] pointer-events-none" />
@@ -23,7 +30,7 @@ export function ClientsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase tracking-[0.25em] font-mono text-zinc-400 mb-3"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-[10px] uppercase tracking-[0.25em] font-mono text-zinc-400 mb-3"
           >
             <Sparkles className="w-3 h-3 text-zinc-300" />
             <span>Confianza Corporativa & Gubernamental</span>
@@ -62,10 +69,10 @@ export function ClientsSection() {
             </span>
           </div>
 
-          <div className="relative w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-zinc-950/60 backdrop-blur-xl py-5 sm:py-8">
+          <div className="relative w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-black/40 backdrop-blur-md py-5 sm:py-8 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
             {/* Gradient shadow masks for Starlink look */}
-            <div className="absolute top-0 bottom-0 left-0 w-12 sm:w-36 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent z-20 pointer-events-none" />
-            <div className="absolute top-0 bottom-0 right-0 w-12 sm:w-36 bg-gradient-to-l from-zinc-950 via-zinc-950/80 to-transparent z-20 pointer-events-none" />
+            <div className="absolute top-0 bottom-0 left-0 w-12 sm:w-36 bg-gradient-to-r from-black via-black/80 to-transparent z-20 pointer-events-none" />
+            <div className="absolute top-0 bottom-0 right-0 w-12 sm:w-36 bg-gradient-to-l from-black via-black/80 to-transparent z-20 pointer-events-none" />
 
             {/* Infinite Marquee Track with Framer Motion */}
             <motion.div
@@ -81,7 +88,7 @@ export function ClientsSection() {
               {marqueeLogos.map((client, idx) => (
                 <div
                   key={`${client.name}-${idx}`}
-                  className="group relative flex items-center justify-center h-18 sm:h-24 px-5 sm:px-8 min-w-[160px] sm:min-w-[230px] rounded-xl sm:rounded-2xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/5 hover:border-white/20 transition-all duration-300 shadow-lg shadow-black/40"
+                  className="group relative flex items-center justify-center h-18 sm:h-24 px-5 sm:px-8 min-w-[160px] sm:min-w-[230px] rounded-xl sm:rounded-2xl bg-black/40 backdrop-blur-md hover:bg-black/60 border border-white/5 hover:border-white/20 transition-all duration-300 shadow-lg shadow-black/40"
                 >
                   <div className="relative w-28 sm:w-36 h-10 sm:h-12 flex items-center justify-center">
                     <Image
@@ -113,7 +120,7 @@ export function ClientsSection() {
                 Nómina oficial de empresas energéticas, organismos públicos y consultoras.
               </p>
             </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] sm:text-xs font-mono text-zinc-300 self-start sm:self-auto shrink-0">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-[11px] sm:text-xs font-mono text-zinc-300 self-start sm:self-auto shrink-0">
               <ShieldCheck className="w-3.5 h-3.5 text-zinc-300" />
               <span>{EXACT_CLIENTS_LIST.length} Clientes Oficiales</span>
             </div>
@@ -128,7 +135,7 @@ export function ClientsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.03 }}
-                className="group relative rounded-xl sm:rounded-2xl p-4 sm:p-5 bg-white/5 border border-white/10 hover:border-white/25 hover:bg-white/[0.08] backdrop-blur-md transition-all duration-300 flex items-start gap-3 sm:gap-4 hover:shadow-[0_0_25px_rgba(255,255,255,0.05)] cursor-default"
+                className="group relative rounded-xl sm:rounded-2xl p-4 sm:p-5 bg-black/40 border border-white/10 hover:border-white/25 hover:bg-black/60 backdrop-blur-md transition-all duration-300 flex items-start gap-3 sm:gap-4 hover:shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] cursor-default"
               >
                 {/* Minimalist Verification Icon with Pale Blue Accent */}
                 <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-white/10 group-hover:border-sky-300/40 transition-colors">
@@ -156,7 +163,7 @@ export function ClientsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-10 sm:mt-16 p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-zinc-950/80 border border-zinc-800/80 flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6 text-center md:text-left"
+          className="mt-10 sm:mt-16 p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-black/40 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6 text-center md:text-left"
         >
           <div>
             <h4 className="text-base sm:text-lg font-bold text-white tracking-tight">
@@ -175,6 +182,6 @@ export function ClientsSection() {
           </a>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

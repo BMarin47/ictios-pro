@@ -10,7 +10,14 @@ export function Team() {
   const col2 = INTERDISCIPLINARY_ROLES.slice(midPoint);
 
   return (
-    <section id="equipo" className="relative py-12 px-4 sm:px-6 md:py-24 md:px-8 lg:px-12 bg-black text-white overflow-hidden">
+    <motion.section
+      id="equipo"
+      initial={{ opacity: 0, y: 35 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="relative py-14 px-4 sm:px-6 md:py-24 md:px-8 lg:px-12 bg-black text-white overflow-hidden"
+    >
       {/* Subtle ambient lighting */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[750px] h-[350px] bg-zinc-800/10 rounded-full blur-[150px] pointer-events-none" />
 
@@ -37,7 +44,7 @@ export function Team() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="p-6 sm:p-8 md:p-9 rounded-2xl bg-zinc-950/70 border border-zinc-800 hover:border-zinc-600/80 backdrop-blur-md transition-all duration-300 flex flex-col justify-between hover:shadow-[0_0_30px_rgba(255,255,255,0.04)]"
+              className="p-6 sm:p-8 md:p-9 rounded-2xl bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/25 hover:bg-black/60 transition-all duration-300 flex flex-col justify-between shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] hover:shadow-[0_12px_40px_0_rgba(255,255,255,0.06)]"
             >
               <div>
                 <h3 className="text-base sm:text-lg md:text-xl font-bold tracking-tight text-white uppercase mb-2">
@@ -75,7 +82,7 @@ export function Team() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto p-5 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl bg-zinc-950/50 border border-zinc-800/80 backdrop-blur-md"
+          className="max-w-4xl mx-auto p-5 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl bg-black/40 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-3 sm:gap-y-4">
             {/* Column 1 */}
@@ -104,6 +111,6 @@ export function Team() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
